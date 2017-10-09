@@ -25,6 +25,13 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+
+# Obake setup script
+service obake_thermal /init.obake.sh
+    user root
+    seclabel u:r:sudaemon:s0
+    disabled
+    oneshot
+
 on post-fs
-    # Obake setup script
-    exec /init.obake.sh
+    start obake_thermal
