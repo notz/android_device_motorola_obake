@@ -33,5 +33,5 @@ service obake_thermal /init.obake.sh
     disabled
     oneshot
 
-on property:init.svc.bootanim=stopped
+on post-fs
     start obake_thermal
